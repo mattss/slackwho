@@ -3,6 +3,7 @@ import json
 import sys
 import os
 from collections import defaultdict
+from requests.exceptions import ConnectionError
 
 from slackclient import SlackClient
 
@@ -24,7 +25,11 @@ except json.decoder.JSONDecodeError as jse:
 online = defaultdict(list)
 for account_name, token in channels.items():
     sc = SlackClient(token)
-    users = sc.api_call("users.list")
+    try:
+        users = sc.api_call("users.list")
+    except ConnectionError:
+        print('<api connection error>')
+        sys.exit(1)
     for user in users['members']:
         userid = user['id']
         username = user['name']
@@ -35,7 +40,7 @@ for account_name, token in channels.items():
 
 print(':: slackwho ::')
 for username, channel_list in sorted(online.items()):
-    print('{} ({})'.format(
+    print('\033[1m{}\033[0m\t{}'.format(
         username,
         ', '.join(sorted(channel_list))
     ))

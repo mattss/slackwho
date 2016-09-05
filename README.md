@@ -43,6 +43,6 @@ Python 3
 All online users, followed by the account(s) they are active on.
 
     :: slackwho ::
-    user1 (accountlist)
-    user2 (accountlist)
-    user3 (accountlist)
+    user1   accountlist
+    user2   accountlist
+    user3   accountlist
