@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 import json
 import sys
+import os
 from collections import defaultdict
 
 from slackclient import SlackClient
 
-CONFIG_FILENAME = 'accounts.json'
+CONFIG_FILENAME = os.path.join(
+    os.path.dirname(__file__),
+    'accounts.json')
 
 try:
     channels = json.loads(open(CONFIG_FILENAME).read())
