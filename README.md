@@ -36,7 +36,7 @@ Python 3
 
 ## Run
 
-    python slackwho.py
+    python3 slackwho.py
 
 ## Output
 
