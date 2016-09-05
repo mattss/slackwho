@@ -1,16 +1,16 @@
 # slackwho
 At-a-glance multi-account presence checker for Slack
-Designed for use with [GeekTool|https://www.tynsoe.org/v2/geektool/] or similar.
+Designed for use with [GeekTool](https://www.tynsoe.org/v2/geektool/) or similar.
 
 ## Why?
 
 I have multiple slack accounts for various groups and organisations, and wanted
 a way to quickly see an overview of who was online.
 
-This script uses the [Slack API|https://api.slack.com/] to generate a text contacts list of all users
+This script uses the [Slack API](https://api.slack.com/) to generate a text contacts list of all users
 who are online across the slack accounts that you configure.
 
-You can use something like [GeekTool|https://www.tynsoe.org/v2/geektool/]
+You can use something like [GeekTool](https://www.tynsoe.org/v2/geektool/)
 to stick the output of it on your desktop.
 
 ## Requirements
