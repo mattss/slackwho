@@ -28,6 +28,7 @@ Designed for use with geektool or similar.
 
 All online users, followed by the account(s) they are active on.
 
+    :: slackwho ::
     user1 (accountlist)
     user2 (accountlist)
     user3 (accountlist)

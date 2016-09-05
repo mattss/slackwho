@@ -33,5 +33,6 @@ for account_name, token in channels.items():
             continue
         online[username].append(account_name)
 
+print(':: slackwho ::')
 for username, channel_list in sorted(online.items()):
     print('{} ({})'.format(username, ', '.join(channel_list)))
