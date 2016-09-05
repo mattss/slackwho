@@ -8,17 +8,17 @@ Designed for use with geektool or similar.
  * Create an accounts.json, mapping account names to api tokens:
 
 
-    {"slack account 1": "<token-for-account-1>",
-     "slack account 2": "<token-for-account-2>"
+    {"slack account 1": "token-for-account-1",
+     "slack account 2": "token-for-account-2"
      }
 
-    (Generate personal API tokens at https://api.slack.com/web#authentication)
+    **(Generate personal API tokens at https://api.slack.com/web#authentication)**
 
  * Create a virtualenv and activate
 
  * Install requirements
 
-    pip install -r requirements.txt
+     pip install -r requirements.txt
 
 ## Run
 
