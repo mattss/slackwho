@@ -46,3 +46,7 @@ All online users, followed by the account(s) they are active on.
     user1   accountlist
     user2   accountlist
     user3   accountlist
+
+## HTML Output
+
+    python3 slackwho.py --html
