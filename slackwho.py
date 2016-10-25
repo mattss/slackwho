@@ -46,10 +46,19 @@ for account_name, token in channels.items():
         online[username].append(account_name)
 
 print(':: slackwho ::')
+if '--html' in sys.argv:
+    print('<br />')
+
 max_username_length = len(max(online.keys(), key=len))
 for username, channel_list in sorted(online.items()):
     # bold username, tab, channel list
-    print('\033[1m{}\033[0m\t{}'.format(
+    if '--html' in sys.argv:
+        format_string = ('<span class="username">{}</span>'
+                         '<span class="channels">{}</span><br />')
+    else:
+        format_string = '\033[1m{}\033[0m\t{}'
+
+    print(format_string.format(
         username.ljust(max_username_length, ' '),
         ', '.join(sorted(channel_list))
     ))
