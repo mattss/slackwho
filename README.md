@@ -11,6 +11,7 @@ This script uses the [Slack API](https://api.slack.com/) to generate a text cont
 who are online across the slack accounts that you configure.
 
 You can use something like [GeekTool](https://www.tynsoe.org/v2/geektool/)
+or [Übersicht](http://tracesof.net/uebersicht/)
 to stick the output of it on your desktop.
 
 ## Requirements
