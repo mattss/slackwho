@@ -49,6 +49,9 @@ print(':: slackwho ::')
 if '--html' in sys.argv:
     print('<br />')
 
+if not online:
+    sys.exit(0)
+
 max_username_length = len(max(online.keys(), key=len))
 for username, channel_list in sorted(online.items()):
     # bold username, tab, channel list
