@@ -41,9 +41,10 @@ for account_name, token in channels.items():
         dnd = sc.api_call('dnd.info', user=userid)
         next_dnd_end = datetime.fromtimestamp(dnd['next_dnd_end_ts'])
         next_dnd_start = datetime.fromtimestamp(dnd['next_dnd_start_ts'])
+        display_account_name = account_name
         if next_dnd_start < now < next_dnd_end:
-            username += '-dnd'
-        online[username].append(account_name)
+            display_account_name += u'-dnd'
+        online[username].append(display_account_name)
 
 print(':: slackwho ::')
 if '--html' in sys.argv:
