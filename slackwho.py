@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import json
-import sys
 import os
-from datetime import datetime
+import sys
 from collections import defaultdict
+from datetime import datetime
+
 from requests.exceptions import ConnectionError
 
 from slackclient import SlackClient
@@ -35,7 +36,10 @@ for account_name, token in channels.items():
     for user in users['members']:
         userid = user['id']
         username = user['name']
-        presence = sc.api_call('users.getPresence', user=userid)
+        try:
+            presence = sc.api_call('users.getPresence', user=userid)
+        except json.decoder.JSONDecodeError:
+            continue
         if presence['presence'] == 'away':
             continue
         dnd = sc.api_call('dnd.info', user=userid)
