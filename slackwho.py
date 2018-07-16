@@ -6,7 +6,6 @@ from collections import defaultdict
 from datetime import datetime
 
 from requests.exceptions import ConnectionError
-
 from slackclient import SlackClient
 
 CONFIG_FILENAME = os.path.join(
@@ -31,7 +30,7 @@ def get_online(channels):
                 presence = sc.api_call('users.getPresence', user=userid)
             except json.decoder.JSONDecodeError:
                 continue
-            if presence['presence'] == 'away':
+            if presence.get('presence') == 'away':
                 continue
             dnd = sc.api_call('dnd.info', user=userid)
             next_dnd_end = datetime.fromtimestamp(dnd['next_dnd_end_ts'])
